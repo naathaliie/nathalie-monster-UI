@@ -1,0 +1,167 @@
+{
+    "monster": [
+      {
+        "id": 1,
+        "förnamn": "Gurkax",
+        "efternamn": "Dödskling",
+        "klass": "B-Grupp",
+        "program": "Monsterologi",
+        "utseende": {
+          "antal_ögon": 3,
+          "ögonfärg": "grön",
+          "antal_tentakler": 8,
+          "hudfärg": "blå",
+          "hud": "skrovlig",
+          "päls": false,
+          "antal_horn": 2,
+          "magiska_förmågor": ["telekinesi", "illusioner"],
+          "speciella_unika_saker": ["fluorescerande ögon"]
+        },
+        "kost": {
+          "köttätare": false,
+          "växtätare": true,
+          "allätare": false,
+          "allergier": ["nötter", "blommor"]
+        },
+        "intressen": ["läsa skräckromaner", "samla skedar"],
+        "kurser": ["Trolldom", "Mystik", "Rymdlära"],
+        "betyg": [
+          {"kurs": "Trolldom", "betyg":"B"},
+          {"kurs":"Mystik", "betyg":"C+"},
+          {"kurs":"Rymdlära", "betyg":"A"}
+        ],
+        "hemstad": "Svartskog"
+      },
+      {
+        "id": 2,
+        "förnamn": "Ragnarg",
+        "efternamn": "Flamskalle",
+        "klass": "A-Grupp",
+        "program": "Skogsvård",
+        "utseende": {
+          "antal_ögon": 2,
+          "ögonfärg": "röd",
+          "antal_tentakler": 0,
+          "hudfärg": "grå",
+          "hud": "slät",
+          "päls": true,
+          "längd_på_pälsen": "medium",
+          "antal_horn": 1,
+          "magiska_förmågor": ["växtkontroll", "talande med djur"],
+          "speciella_unika_saker": ["grönblå päls"]
+        },
+        "kost": {
+          "köttätare": true,
+          "växtätare": false,
+          "allätare": false,
+          "allergier": ["bär", "gräs"]
+        },
+        "intressen": ["klättra i träd", "plocka svamp"],
+        "kurser": ["Botanik", "Skogsmagi", "Ekologi"],
+        "betyg": [
+          {"kurs":"Botanik", "betyg":"A"},
+          {"kurs":"Skogsmagi", "betyg":"B+"},
+          {"kurs":"Ekologi", "betyg":"A-"}
+        ],
+        "hemstad": "Grottdal"
+      },
+      {
+        "id": 3,
+        "förnamn": "Blomster",
+        "efternamn": "Mångskägg",
+        "klass": "C-Grupp",
+        "program": "Krukväxter",
+        "utseende": {
+          "antal_ögon": 5,
+          "ögonfärg": "lila",
+          "antal_tentakler": 6,
+          "hudfärg": "rosa",
+          "hud": "mjuk",
+          "päls": false,
+          "antal_horn": 0,
+          "magiska_förmågor": ["växtkontroll", "healing"],
+          "speciella_unika_saker": ["blommor i håret"]
+        },
+        "kost": {
+          "köttätare": false,
+          "växtätare": true,
+          "allätare": false,
+          "allergier": ["pollen", "gräs"]
+        },
+        "intressen": ["odla växter", "skapa parfymer"],
+        "kurser": ["Botanik", "Magisk växtlära", "Kemi"],
+        "betyg": [
+          {"kurs":"Botanik", "betyg":"B-"},
+          {"kurs":"Magisk växtlära", "betyg":"A"},
+          {"kurs":"Kemi", "betyg":"C"}
+        ],
+        "hemstad": "Blomsteräng"
+      },
+      {
+        "id": 4,
+        "förnamn": "Skuggi",
+        "efternamn": "Nattskräck",
+        "klass": "A-Grupp",
+        "program": "Mörkerstudier",
+        "utseende": {
+          "antal_ögon": 4,
+          "ögonfärg": "svart",
+          "antal_tentakler": 0,
+          "hudfärg": "mörkgrå",
+          "hud": "skrovlig",
+          "päls": false,
+          "antal_horn": 0,
+          "magiska_förmågor": ["mörkerseende", "skräckmanipulation"],
+          "speciella_unika_saker": ["osynlig i mörker"]
+        },
+        "kost": {
+          "köttätare": true,
+          "växtätare": false,
+          "allätare": false,
+          "allergier": ["sol", "ljus"]
+        },
+        "intressen": ["studera skräckhistorier", "gömma sig"],
+        "kurser": ["Mörk magi", "Skräckteori", "Undvikande av ljus"],
+        "betyg": [
+          {"kurs":"Mörk magi", "betyg":"A"},
+          {"kurs":"Skräckteori", "betyg":"A+"},
+          {"kurs":"Undvikande av ljus","betyg":"B"}
+        ],
+        "hemstad": "Skuggdal"
+      },
+      {
+        "id": 5,
+        "förnamn": "Fluffi",
+        "efternamn": "Vindpäls",
+        "klass": "B-Grupp",
+        "program": "Flygande konst",
+        "utseende": {
+          "antal_ögon": 2,
+          "ögonfärg": "ljusblå",
+          "antal_tentakler": 0,
+          "hudfärg": "vit",
+          "hud": "mjuk",
+          "päls": true,
+          "längd_på_pälsen": "lång",
+          "antal_horn": 0,
+          "magiska_förmågor": ["flygande", "vindmanipulation"],
+          "speciella_unika_saker": ["fluffig vit päls"]
+        },
+        "kost": {
+          "köttätare": false,
+          "växtätare": false,
+          "allätare": true,
+          "allergier": ["ingen allergi"]
+        },
+        "intressen": ["flyga i stormar", "bygga luftslott"],
+        "kurser": ["Flygteknik", "Meteorologi", "Konst och estetik"],
+        "betyg": [
+          {"kurs":"Flygteknik", "betyg":"A"},
+          {"kurs":"Meteorologi", "betyg":"B+"},
+          {"kurs":"Konst och estetik", "betyg":"A-"}
+        ],
+        "hemstad": "Vindby"
+      }
+    ]
+}  
+  
