@@ -47,7 +47,7 @@ const SearchInput = () => {
         <div>
           {searchSuccessed.map((s: OneMonster) => {
             return (
-              <NavLink key={s.id} to={"/oneMonster"}>
+              <NavLink key={s.id} to={"/OneMonster"}>
                 <p>
                   {s.förnamn} {s.efternamn}
                 </p>
