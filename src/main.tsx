@@ -9,6 +9,7 @@ import SearchMonster from "./routes/SearchMonster.tsx";
 import AddMonsterPage from "./routes/AddMonsterPage.tsx";
 import UpdateMonsterPage from "./routes/UpdateMonsterPage.tsx";
 import DeleteMonsterPage from "./routes/DeleteMonsterPage.tsx";
+import Monster from "./routes/Monster.tsx";
 
 const route = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const route = createBrowserRouter([
       {
         path: "/deletemonster",
         element: <DeleteMonsterPage />,
+      },
+      {
+        path: "/sökmonster/:monsterID",
+        element: <Monster />,
       },
     ],
   },

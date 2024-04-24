@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { monsterContext } from "../components/context/MonsterContext";
 import "./AllMonstersPage.scss";
+import { NavLink } from "react-router-dom";
 
 const AllMonstersPage = () => {
   const { state } = useContext(monsterContext);
@@ -16,11 +17,13 @@ const AllMonstersPage = () => {
 
       {sortedMonsters.map((m) => {
         return (
-          <ul key={m.id}>
-            <li>
-              {m.förnamn} {m.efternamn}
-            </li>
-          </ul>
+          <NavLink
+            className={"navLink"}
+            key={m.id}
+            to={`/sökmonster/${m.förnamn}-${m.efternamn}`}
+          >
+            {m.förnamn} {m.efternamn}
+          </NavLink>
         );
       })}
     </div>
