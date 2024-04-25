@@ -1,6 +1,37 @@
-.Monster{
-    img{
-        width: 20rem;
-        height: 20rem;
+.Monster {
+  display: flex;
+  gap: 12rem;
+  margin-top: 1rem;
+
+  .img-box {
+    display: flex;
+    flex-direction: column;
+    img {
+      max-width: 20rem;
+      max-height: 20rem;
     }
+
+    button{
+        height: 1.5rem;
+       max-width: 6rem; 
+       font-size: 10px;
+       background-color: red;
+    }
+  }
+
+  .info-box {
+    p {
+      margin: 0;
+    }
+
+    .skol-info{
+        border: solid 1px green;
+        padding: 5px;
+    }
+
+    .monster-info{
+        border: solid 1px green;
+        padding: 5px;
+    }
+  }
 }
