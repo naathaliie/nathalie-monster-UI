@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { monsterContext } from "../components/context/MonsterContext";
 import "./AllMonstersPage.scss";
 import { NavLink } from "react-router-dom";
-import { ACTIONS } from "../components/context/monsterReducer";
+
 
 const AllMonstersPage = () => {
   const { state, dispatch } = useContext(monsterContext);
@@ -11,6 +11,10 @@ const AllMonstersPage = () => {
   const sortedMonsters = state.monster.slice().sort((a, b) => {
     return a.förnamn.localeCompare(b.efternamn);
   });
+
+  const handleREMOVE = (id: number) => {
+    dispatch({ type: 'REMOVE', payload: id })
+  }
 
   return (
     <div className="AllMonstersPage">
@@ -29,7 +33,7 @@ const AllMonstersPage = () => {
             <button
               className="btn"
               onClick={() => {
-                dispatch({ type: ACTIONS.REMOVE, payload: m.id });
+                handleREMOVE(m.id)
                 console.log("Du klickade på radera-knappen med id = ", m.id);
               }}
             >

@@ -3,14 +3,14 @@ import { OneMonster } from "../types/monsterTypes";
 import { useContext } from "react";
 import { monsterContext } from "../components/context/MonsterContext";
 import "./Monster.scss";
-import { ACTIONS } from "../components/context/monsterReducer";
+
 
 const Monster = () => {
   const { state, dispatch } = useContext(monsterContext);
   const params = useParams<{ monsterID: string }>();
 
   //Hitta det monster som har samma id som params.monsterId
-  let foundMonster: OneMonster | undefined = state.monster.find((m) => {
+  const foundMonster: OneMonster | undefined = state.monster.find((m) => {
     /*params består av förnamn-efternamn, split("-") skapar en array av strängen i params.monsterId och splittar den till en array med egna element vid varje bindelstreck*/
     const splitParamsName = params.monsterID!.split("-");
 
@@ -28,7 +28,7 @@ const Monster = () => {
 
   const handleREMOVE = () => {
     console.log("du klickade på Remove-knappen med id= ", foundMonster.id);
-    dispatch({ type: ACTIONS.REMOVE, payload: foundMonster.id });
+    dispatch({ type: 'REMOVE', payload: foundMonster.id });
   };
 
   return (
