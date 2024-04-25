@@ -1,6 +1,6 @@
 import { useParams, NavLink } from "react-router-dom";
 import { OneMonster } from "../types/monsterTypes";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { monsterContext } from "../components/context/MonsterContext";
 import "./Monster.scss";
 import { ACTIONS } from "../components/context/monsterReducer";
@@ -8,6 +8,7 @@ import { ACTIONS } from "../components/context/monsterReducer";
 const Monster = () => {
   const { state, dispatch } = useContext(monsterContext);
   const params = useParams<{ monsterID: string }>();
+  const [editMode, setEditMode] = useState<null | string>(null);
 
   //Hitta det monster som har samma id som params.monsterId
   let foundMonster: OneMonster | undefined = state.monster.find((m) => {
@@ -65,51 +66,6 @@ const Monster = () => {
               );
             })}
           </ul>
-        </div>
-        <div className="monster-info">
-          <h4>Monster-info</h4>
-          <p>Hemstad: {foundMonster.hemstad}</p>
-          <p>Antal ögon: {foundMonster.utseende.antal_ögon}</p>
-          <p>Ögonfärg: {foundMonster.utseende.ögonfärg}</p>
-          <p>
-            {foundMonster.utseende.antal_tentakler > 0 &&
-              `Tentakler: ${foundMonster.utseende.antal_tentakler}`}
-          </p>
-          <p>
-            Hud: {foundMonster.utseende.hud}, {foundMonster.utseende.hudfärg}
-          </p>
-          <p>
-            {foundMonster.utseende.antal_horn > 0 &&
-              `Horn: ${foundMonster.utseende.antal_horn}`}
-          </p>
-          <p>Har päls: {foundMonster.utseende.päls ? "Ja" : "Ja"}</p>
-          <p>
-            {foundMonster.utseende.antal_horn > 0 &&
-              `Horn: ${foundMonster.utseende.antal_horn}`}
-          </p>
-          <p>
-            Magiska förmågor:{" "}
-            {foundMonster.utseende.magiska_förmågor.join(", ")}
-          </p>
-          <p>
-            Speciella och unika saker:{" "}
-            {foundMonster.utseende.speciella_unika_saker.join(", ")}
-          </p>
-          <br />
-          <h4>Kost:</h4>
-          <p>Äter kött: {foundMonster.kost.köttätare ? "Ja" : "Nej"}</p>
-          <p>Äter kött: {foundMonster.kost.växtätare ? "Ja" : "Nej"}</p>
-          <p>Äter kött: {foundMonster.kost.allätare ? "Ja" : "Nej"}</p>
-          <p>
-            Allergier:{" "}
-            {foundMonster.kost.allergier
-              ? foundMonster.kost.allergier.join(", ")
-              : "Nej"}
-          </p>
-          <br />
-          <h4>Övrigt:</h4>
-          <p>Intressen: {foundMonster.intressen.join(", ")}</p>
-          <p></p>
         </div>
       </div>
     </div>
