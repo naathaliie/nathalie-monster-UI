@@ -10,6 +10,7 @@ import AddMonsterPage from "./routes/AddMonsterPage.tsx";
 import UpdateMonsterPage from "./routes/UpdateMonsterPage.tsx";
 import DeleteMonsterPage from "./routes/DeleteMonsterPage.tsx";
 import Monster from "./routes/Monster.tsx";
+import MonsterContextProvider from "./components/context/MonsterContextProvider.tsx";
 
 const route = createBrowserRouter([
   {
@@ -56,6 +57,8 @@ const route = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={route}></RouterProvider>
+    <MonsterContextProvider>
+        <RouterProvider router={route}></RouterProvider>
+    </MonsterContextProvider>
   </React.StrictMode>
 );

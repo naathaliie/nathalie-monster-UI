@@ -1,20 +1,16 @@
 import { GlobalMonsterState } from "../../types/monsterTypes";
 
 export type Action =
-  | { type: typeof ACTIONS.ADD; payload: string }
-  | { type: typeof ACTIONS.REMOVE; payload: number };
+  | { type: 'ADD'; payload: string }
+  | { type:  'REMOVE'; payload: number };
 
-export const ACTIONS = {
-  ADD: "ADD",
-  REMOVE: "REMOVE",
-};
 
 export const monsterReducer = (state: GlobalMonsterState, action: Action) => {
   switch (action.type) {
-    case ACTIONS.ADD:
+    case 'ADD':
       return state;
 
-    case ACTIONS.REMOVE:
+    case 'REMOVE':
       console.log("Du kom till actions.remove");
       return {
         ...state,
