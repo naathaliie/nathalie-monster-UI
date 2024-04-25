@@ -9,7 +9,7 @@ const SearchInput = () => {
   const [searchSuccessed, setSearchSuccessed] = useState<OneMonster[]>();
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = () => {
     if (inputRef.current !== null) {
       const typedLetter = inputRef.current.value.trim().toLocaleLowerCase();
       setInputTerm(typedLetter);
