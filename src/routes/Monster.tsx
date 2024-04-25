@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { OneMonster } from "../types/monsterTypes";
 import { useContext } from "react";
 import { monsterContext } from "../components/context/MonsterContext";
@@ -27,8 +27,9 @@ const Monster = () => {
   }
 
   const handleREMOVE = () => {
-    console.log("du klickade på Remove-knappen med id= ", foundMonster.id);
-    dispatch({ type: ACTIONS.REMOVE, payload: foundMonster.id });
+    setTimeout(() => {
+      dispatch({ type: ACTIONS.REMOVE, payload: foundMonster.id });
+    }, 1000);
   };
 
   return (
@@ -39,7 +40,9 @@ const Monster = () => {
           alt={foundMonster.img}
         />
         <button className="btn radera" onClick={handleREMOVE}>
-          Radera monster
+          <NavLink key={foundMonster.id} to={"/allamonster"}>
+            Radera monster
+          </NavLink>
         </button>
       </div>
       <div className="info-box">

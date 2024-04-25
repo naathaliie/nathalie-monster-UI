@@ -26,15 +26,6 @@ const AllMonstersPage = () => {
             >
               {m.förnamn} {m.efternamn}
             </NavLink>
-            <button
-              className="btn"
-              onClick={() => {
-                dispatch({ type: ACTIONS.REMOVE, payload: m.id });
-                console.log("Du klickade på radera-knappen med id = ", m.id);
-              }}
-            >
-              radera
-            </button>
           </span>
         );
       })}
