@@ -2,6 +2,7 @@ import monster_json from "../Data/monsters.json";
 
 export type OneMonster = {
     id: number;
+    img: string;
     förnamn: string;
     efternamn: string;
     klass: string;
