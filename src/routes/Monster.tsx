@@ -3,9 +3,10 @@ import { OneMonster } from "../types/monsterTypes";
 import { useContext } from "react";
 import { monsterContext } from "../components/context/MonsterContext";
 import "./Monster.scss";
+import { ACTIONS } from "../components/context/monsterReducer";
 
 const Monster = () => {
-  const { state } = useContext(monsterContext);
+  const { state, dispatch } = useContext(monsterContext);
   const params = useParams<{ monsterID: string }>();
 
   //Hitta det monster som har samma id som params.monsterId
@@ -25,6 +26,11 @@ const Monster = () => {
     return <p>Laddar...</p>;
   }
 
+  const handleREMOVE = () => {
+    console.log("du klickade på Remove-knappen med id= ", foundMonster.id);
+    dispatch({ type: ACTIONS.REMOVE, payload: foundMonster.id });
+  };
+
   return (
     <div className="Monster">
       <div className="img-box">
@@ -32,7 +38,9 @@ const Monster = () => {
           src={`/src/assets/img/${foundMonster.img}`}
           alt={foundMonster.img}
         />
-        <button>Radera monster</button>
+        <button className="btn radera" onClick={handleREMOVE}>
+          Radera monster
+        </button>
       </div>
       <div className="info-box">
         <h3>
@@ -43,18 +51,17 @@ const Monster = () => {
           <p>Program: {foundMonster.program}</p>
           <p>Klass: {foundMonster.klass}</p>
           <p>Kurser: {foundMonster.kurser.join(", ")}</p>
-          <p>
+
+          <ul key={foundMonster.id}>
             Betyg:{" "}
-            <ul key={foundMonster.id}>
-              {foundMonster.betyg.map((b) => {
-                return (
-                  <li>
-                    {b.kurs}: {b.betyg}
-                  </li>
-                );
-              })}
-            </ul>
-          </p>
+            {foundMonster.betyg.map((b, index) => {
+              return (
+                <li key={index}>
+                  {b.kurs}: {b.betyg}
+                </li>
+              );
+            })}
+          </ul>
         </div>
         <div className="monster-info">
           <h4>Monster-info</h4>
