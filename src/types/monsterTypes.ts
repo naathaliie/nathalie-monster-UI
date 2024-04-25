@@ -40,8 +40,8 @@ export type Betyg = {
     betyg: string,
 };
 
-export type InitialMonsterType = {
+export type GlobalMonsterState = {
     monster: OneMonster[];
 };
 
-export const initialMonsterState: InitialMonsterType = monster_json;
+export const initialMonsterState: GlobalMonsterState = monster_json as GlobalMonsterState;
