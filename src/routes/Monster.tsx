@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { OneMonster } from "../types/monsterTypes";
 import { useContext } from "react";
 import { monsterContext } from "../components/context/MonsterContext";
+import "./Monster.scss";
 
 const Monster = () => {
   const { state } = useContext(monsterContext);
@@ -24,12 +25,12 @@ const Monster = () => {
     return <p>Laddar...</p>;
   }
 
-  console.log("params", params);
   return (
     <div className="Monster">
       <h3>
         {foundMonster.förnamn} {foundMonster.efternamn}
       </h3>
+      <img src={`/src/assets/img/${foundMonster.img}`} alt={foundMonster.img} />
     </div>
   );
 };
